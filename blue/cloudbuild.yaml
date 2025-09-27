@@ -18,4 +18,3 @@ steps:
 images:
   - gcr.io/$PROJECT_ID/cloudrun-amazingapp:$COMMIT_SHA
 
-logsBucket: "gs://your-build-logs-bucket"
