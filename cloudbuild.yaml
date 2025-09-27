@@ -17,4 +17,3 @@ steps:
     - '--allow-unauthenticated'
 images:
   - gcr.io/$PROJECT_ID/cloudrun-amazingapp:$COMMIT_SHA
-
