@@ -4,11 +4,11 @@ options:
 steps:
   # Build Docker image from blue/ folder
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/blue-app:$COMMIT_SHA', './blue']
+    args: ['build', '-t', 'gcr.io/networkvpc-491202/blue-app:$COMMIT_SHA', './blue']
 
   # Push Docker image to Container Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/$PROJECT_ID/blue-app:$COMMIT_SHA']
+    args: ['push', 'gcr.io/networkvpc-491202/blue-app:$COMMIT_SHA']
 
   # Deploy image to Cloud Run
   - name: 'gcr.io/cloud-builders/gcloud'
@@ -17,7 +17,7 @@ steps:
       - 'deploy'
       - 'amazingapp'
       - '--image'
-      - 'gcr.io/$PROJECT_ID/blue-app:$COMMIT_SHA'
+      - 'gcr.io/networkvpc-491202/blue-app:$COMMIT_SHA'
       - '--region'
       - 'us-east1'
       - '--platform'
@@ -25,5 +25,5 @@ steps:
       - '--allow-unauthenticated'
 
 images:
-  - gcr.io/$PROJECT_ID/blue-app:$COMMIT_SHA
+  - gcr.io/networkvpc-491202/blue-app:$COMMIT_SHA
 
